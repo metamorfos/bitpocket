@@ -20,13 +20,13 @@ _If you find this tool interesting please vote on my EuRuKo 2012 talk proposal
 
 Clone repository and symlink `bitpocket` bin to sth in your `$PATH`:
 
-    $ git clone git://github.com/sickill/bitpocket.git
-    $ ln -s `pwd`/bitpocket/bin/bitpocket ~/bin/bitpocket
+    $ git clone git://github.com/metamorfos/bitpocket.git
+    $ rsync -aP `pwd`/bitpocket/bin/bitpocket ~/.bin/bitpocket
 
 Or download script and place it in a directory in your `$PATH`:
 
-    $ curl -sL https://raw.github.com/sickill/bitpocket/master/bin/bitpocket > ~/bin/bitpocket
-    $ chmod +x ~/bin/bitpocket
+    $ curl -sL https://raw.github.com/sickill/bitpocket/master/bin/bitpocket > ~/.bin/bitpocket
+    $ chmod +x ~/.bin/bitpocket
 
 
 ## Setting up master

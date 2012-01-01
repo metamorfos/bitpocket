@@ -71,10 +71,10 @@ function sync {
   on_slow_sync_start
 
   # fetch everything new and updated, locally remove files deleted on remote
-  rsync -auvzxi --copy-dirlinks --delete --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
+  rsync -auvzxi -L --delete --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
 
   # send new and updated, remotely remove files deleted locally
-  rsync -auvzxi --copy-dirlinks --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
+  rsync -auvzxi -L --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
 
   # fire off slow sync stop notifier in background
   on_slow_sync_stop

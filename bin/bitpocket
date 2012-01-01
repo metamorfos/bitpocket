@@ -49,7 +49,7 @@ function sync {
   assert_dotdir
   acquire_lock
 
-  echo -e "\e[1;32mbitpocket\e[0m started at `date`."
+  echo -e "bitpocket started at `date`."
   echo
 
   # check what has changed

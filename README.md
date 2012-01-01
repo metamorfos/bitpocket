@@ -1,5 +1,8 @@
 # bitpocket
 
+## Fork
+This is my fork of the [project][www.github.com/sickill/bitpocket], check out the original project by [sickill][www.github.com/sickill]
+
 ## About
 
 **bitpocket** is a small but smart script that does 2-way directory
@@ -16,13 +19,13 @@ can finally make use of it.
 
 Clone repository and symlink `bitpocket` bin to sth in your `$PATH`:
 
-    $ git clone git://github.com/sickill/bitpocket.git
-    $ ln -s `pwd`/bitpocket/bin/bitpocket ~/bin/bitpocket
+    $ git clone git://github.com/metamorfos/bitpocket.git
+    $ rsync -aP `pwd`/bitpocket/bin/bitpocket ~/.bin/bitpocket
 
 Or download script and place it in a directory in your `$PATH`:
 
-    $ curl -sL https://raw.github.com/sickill/bitpocket/master/bin/bitpocket > ~/bin/bitpocket
-    $ chmod +x ~/bin/bitpocket
+    $ curl -sL https://raw.github.com/sickill/bitpocket/master/bin/bitpocket > ~/.bin/bitpocket
+    $ chmod +x ~/.bin/bitpocket
 
 
 ## Setting up master

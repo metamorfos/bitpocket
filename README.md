@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/sickill/bitpocket.png?branch=master)](http://travis-ci.org/sickill/bitpocket)
 ## Fork
-This is my fork of the [project](/bitpocket), check out the original project by [sickill](sickill)
+This is my fork of the [project](/sickill/bitpocket), check out the original project by [sickill](/sickill)
 
 ## About
 

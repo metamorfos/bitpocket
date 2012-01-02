@@ -1,7 +1,7 @@
 # bitpocket
 
 ## Fork
-This is my fork of the [project](/bitpocket), check out the original project by [sickill](sickill)
+This is my fork of the [project](/sickill/bitpocket), check out the original project by [sickill](/sickill)
 
 ## About
 

@@ -9,7 +9,7 @@ STATE_DIR="$DOT_DIR/state"
 LOCK_FILE="$TMP_DIR/lock"
 SLOW_SYNC_TIME=10
 SLOW_SYNC_FILE="$TMP_DIR/slow"
-
+RSYNC_OPTS="-LP --partial --progress"
 [ -f "$CFG_FILE" ] && . "$CFG_FILE"
 
 function init {
@@ -71,10 +71,10 @@ function sync {
   on_slow_sync_start
 
   # fetch everything new and updated, locally remove files deleted on remote
-  rsync -auvzxi -L --delete --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
+  rsync -auvzxi $RSYNC_OPTS --delete --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
 
   # send new and updated, remotely remove files deleted locally
-  rsync -auvzxi -L --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
+  rsync -auvzxi $RSYNC_OPTS --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
 
   # fire off slow sync stop notifier in background
   on_slow_sync_stop

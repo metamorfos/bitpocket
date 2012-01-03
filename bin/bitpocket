@@ -52,7 +52,7 @@ REMOTE_PATH="$2"
 # RSYNC_RSH="ssh -p 22 -i $DOT_DIR/id_rsa"
 
 ## Uncomment following line to follow symlinks (transform it into referent file/dir)
-# RSYNC_OPTS="-L"
+# RSYNC_OPTS="-lP"
 
 ## Uncomment following lines to get sync notifications
 # SLOW_SYNC_TIME=10
@@ -95,13 +95,11 @@ function sync {
   # Fire off slow sync start notifier in background
   on_slow_sync_start
 
-  # Fetch everything new and updated, locally remove files deleted on remote
-  echo  "Fetching changes from server"
-  rsync -auvzxi --delete $RSYNC_OPTS --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
+  # fetch everything new and updated, locally remove files deleted on remote
+  rsync -auvzxi $RSYNC_OPTS --delete --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
 
   # send new and updated, remotely remove files deleted locally
-  echo "Pushing changes to server"
-  rsync -auvzxi --delete $RSYNC_OPTS --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
+  rsync -auvzxi $RSYNC_OPTS --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
 
   # Fire off slow sync stop notifier in background
   on_slow_sync_stop

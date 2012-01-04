@@ -10,6 +10,7 @@ LOCK_FILE="$TMP_DIR/lock"
 SLOW_SYNC_TIME=10
 SLOW_SYNC_FILE="$TMP_DIR/slow"
 RSYNC_OPTS="-LP --partial --progress"
+
 [ -f "$CFG_FILE" ] && . "$CFG_FILE"
 
 function init {

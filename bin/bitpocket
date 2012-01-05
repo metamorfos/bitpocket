@@ -79,7 +79,6 @@ function sync {
 
   # send new and updated, remotely remove files deleted locally
   rsync -auvzxi $RSYNC_OPTS --delete --exclude "/$DOT_DIR" $user_exclude . $REMOTE/ || die
-=======
   rsync -auvzxi --delete $RSYNC_OPTS --exclude "/$DOT_DIR" $user_exclude --exclude-from "$TMP_DIR/fetch-exclude" $REMOTE/ . || die
 
   # send new and updated, remotely remove files deleted locally

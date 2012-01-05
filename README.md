@@ -7,7 +7,7 @@ This is my fork of the [project](/sickill/bitpocket), check out the original pro
 ## About
 
 **bitpocket** is a small but smart script that does 2-way directory
-synchronization. It uses _rsync_ to do efficient data transfer and tracks local
+synchronization. It uses `rsync` to do efficient data transfer and tracks local
 file creation/removal to avoid known rsync problem when doing 2-way syncing
 with deletion.
 
@@ -50,7 +50,7 @@ On each machine you want to synchronize initialize empty directory as your bitpo
 
 ### Manual sync
 
-Now whenever you want to sync with master just run _bitpocket sync_ inside your
+Now whenever you want to sync with master just run `bitpocket sync` inside your
 bitpocket directory:
 
     $ cd ~/BitPocket
@@ -81,9 +81,9 @@ and uncomment line with `RSYNC_SSH` in _.bitpocket/config_ file.
 
 You can pass additional switches to `rsync` by setting `RSYNC_OPTS` in
 _.bitpocket/config_ file. Generated config file includes (commented out)
-example setting for dereferencing symlinks:
+example setting for dereferencing symlinks and to transfer files bit-wise:
 
-    # RSYNC_OPTS="-L"
+    # RSYNC_OPTS="-LP --partial"
 
 Just uncomment it and change at will.
 

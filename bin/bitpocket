@@ -12,7 +12,6 @@ LOCK_FILE="$TMP_DIR/lock"
 # Default settings
 SLOW_SYNC_TIME=10
 SLOW_SYNC_FILE="$TMP_DIR/slow"
-RSYNC_OPTS="-LP --partial --progress"
 RSYNC_RSH="ssh"
 
 # Load config file

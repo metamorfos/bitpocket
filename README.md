@@ -42,7 +42,7 @@ On each machine you want to synchronize initialize empty directory as your bitpo
 
     $ mkdir ~/BitPocket
     $ cd ~/BitPocket
-    $ bitpocket init user@example.org:~/BitPocketMaster
+    $ bitpocket init user@example.org ~/BitPocketMaster
 
 
 ### Manual sync
@@ -80,7 +80,7 @@ You can pass additional switches to `rsync` by setting `RSYNC_OPTS` in
 _.bitpocket/config_ file. Generated config file includes (commented out)
 example setting for dereferencing symlinks:
 
-    # RSYNC_OPTS="L"
+    # RSYNC_OPTS="-L"
 
 Just uncomment it and change at will.
 

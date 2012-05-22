@@ -1,0 +1,14 @@
+## Host and path of central storage
+REMOTE_HOST=$1
+REMOTE_PATH="$2"
+
+## SSH command with options for connecting to \$REMOTE
+# RSYNC_RSH="ssh -p 22 -i $DOT_DIR/id_rsa"
+
+## Uncomment following line to copu symlinks and to partially transfer files
+# RSYNC_OPTS="-lP --partial --progress"
+
+## Uncomment following lines to get sync notifications
+# SLOW_SYNC_TIME=10
+# SLOW_SYNC_START_CMD="notify-send 'BitPocket sync in progress...'"
+# SLOW_SYNC_STOP_CMD="notify-send 'BitPocket sync finished'"

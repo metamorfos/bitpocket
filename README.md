@@ -84,7 +84,7 @@ You can pass additional switches to `rsync` by setting `RSYNC_OPTS` in
 _.bitpocket/config_ file. Generated config file includes (commented out)
 example setting for dereferencing symlinks and to transfer files bit-wise:
 
-    # RSYNC_OPTS="-LP --partial"
+    # RSYNC_OPTS="-l --partial"
 
 Just uncomment it and change at will.
 

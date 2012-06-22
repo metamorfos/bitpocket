@@ -5,7 +5,7 @@ REMOTE_PATH="$2"
 ## SSH command with options for connecting to \$REMOTE
 # RSYNC_RSH="ssh -p 22 -i $DOT_DIR/id_rsa"
 
-## Uncomment following line to copu symlinks as symlinks and to partially transfer files
+## Uncomment the following line to copy symlinks just as symlinks and to partially transfer files
 # RSYNC_OPTS="-l --partial"
 
 ## Uncomment following lines to get sync notifications
